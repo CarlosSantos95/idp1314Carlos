@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>T&iacute;tulo del trabajo</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>PDC Windows 2008 Server</i></li>
+    <li><b>Componentes del grupo:</b> <i>Carlos Santos</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>24 de Abril de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Configuraci&oacute;n inicial</a> | <a href='#bloque2'>Usuarios y grupos</a> | <a href='#final'>Windows 7</a>| <a href='#final1'>Perfiles m&oacute;viles</a>
+</div>
+<h1><a id='bloque1'>Configuraci&oacute;n inicial</a></h1>
+<p>Una vez instaladas las maquinas virtuales necesarias para realizar la practica,configuramos la conexion a la red.
+El windows 2008 server será la maquina PDC.Establecemos un nombre de dominio y dentro de la consola(CMD) ejecutamos 
+el comando dcpromo para activar la funcion de controlador de dominios.</p>
+<br>
+ <img src='./files/dominio.png'/>
+  <img src='./files/cdpromo.png'/>
+  <br>
+<h1><a id='bloque2'>Usuarios y grupos del dominio.</a></h1>
+<p>En el windows 2008 server,vamos a crear los usuarios y grupos que queremos que pertenezcan al dominio.Para ello vamos a 
+Ir a Inicio -> Herramientas Administrativas -> Usuarios y Equipos de Active Directory.</p>
+<br>
+ <img src='./files/grupojedi.png'/>
+  <img src='./files/gruposith.png'/>
+</p>
+<h1><a id='final'>Windows 7</a></h1>
+<p>Instalaremos dos maquinas virtuales con windows 7 que funcionar&aacute;n como clientes del dominio.
+Pondremos como nombre de equipo santos2a y santos2b respectivamente y como dominio.</p>
+  <img src='./files/santos2a.png'/>
+  <br>
+ <p>A continuaci&oacute;n comprobaremos que podemos entrar desde las maquinas clientes con los usuarios anteriormente creados en el
+ 2008 server.</p>
+ <br>
+ <img src='./files/yoda.png'/>
+ <br>
+ <p>Comprobar en el PDC que aparecen los equipos "santos2a" y "santos2b" como equipos del dominio.</p>
+ <br>
+ <img src='./files/comprobacionequiposdominio.png'/>
+ <br>
+ <p>En el 2008 server,entramos en el disco C:,creamos la carpeta perfiles y la ponemos como compartida por red,
+ con permisos de lectura/escritura y modificamos el atributo 'perfil' de los usuarios del dominio.</p>
+ <br>
+ <img src='./files/perfilasos.png'/>
+  <img src='./files/ruta.png'/>
+  <br>
+	  <img src='./files/perfiles.png'/>
+	  <br>
+	  <p>Vamos a "Inicio -> Panel de Control -> Sistema -> Opciones Avanzadas -> Configuración de Perfiles de usuario". 
+	  Eliminamos las copias de los perfiles móviles en el equipo cliente.Nostendria que quedar as&iacute;.</p>
+	   <img src='./files/borrado.png'/>
+	   <br>
+	   <p>Por ultimo,desde el windows 2008 server,configuramos la hora que los usuarios puedan acceder al dominio.
+		Los del grupo jedi accederan de 8:00 a 14:00 y los del grupo sith de 14:00 a 20:00.</p>
+		<img src='./files/hora.png'/>
+		<img src='./files/sith.png'/>
+
+</body>
+</html>
