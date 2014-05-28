@@ -1,0 +1,45 @@
+<html>
+<head>
+	<title>T&iacute;tulo del trabajo</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+<body>
+<div style='display:table-row; padding: 10px;'>
+  <div style='float: left; width=20%; padding:10px;'>
+  <img src='./files/logo.png'/>
+  </div>
+  <div style='float: left;padding:10px'>
+  <ul>
+    <li><b>M&oacute;dulo:</b> <i>Sistemas Operativos</i></li>
+    <li><b>T&iacute;tulo del trabajo</b> <i>Clientes de domini</i></li>
+    <li><b>Componentes del grupo:</b> <i>Carlos Santos Carballo</i></li>
+    <li><b>Curso Acad&eacute;mico:</b> <i>2013/2014</i></li>
+    <li><b>Fecha de entrega:</b> <i>28 de Mayo de 2014</i></li>
+  </ul>
+  </div>
+</div>
+<div style='float: clear;background-color: #eeeeee; border:2px solid; border-radius:10px; padding: 10px;'>
+<a href='#bloque1'>Configuración Clientes</a> | <a href='#bloque2'>Unirse al dominio</a> | <a href='#final'>Comprobración</a>
+</div>
+<h1><a id='bloque1'><u>Configuración Clientes</u></a></h1>
+<p>Como primer y más importante paso tenemos que configurar la red de nuestro Linux cliente.</p><br>
+<img src='./files/confred.png'/><br><br>
+<p>Para saber si nuestros dns funcionan correctamente realizamos el siguiente comando:<br><br>
+		- nslookup www.iespuertodelacruz.es</p>
+<img src='./files/nslookup.png'/><br>
+<h1><a id='bloque2'><u>Unirse al dominio</u></a></h1>
+<p>A través del programa Likewise,vamos a unirnos al PDC de Windows Server.Con estos comando instalamos los paquetes del Likewise.</p>
+<p>- likewise-open y likewise-open-gui</p><br>
+	<img src='./files/activedirectory.png'/><br>
+<p>Para entrar en el dominio,ponemos el nombre de nuestro dominio y seguidamente ponemos la contraseña y nombre de usuario del administrador del PDC de Windows Server.</p>
+<p><font size='6'><b>NOTA:</b></font>En mi caso me dió un error de dns que solucioné editando el fichero /etc/hosts y pusiendo la ip y nombre del dominio.</p>
+	<img src='./files/hosts.png'/><br>
+<p>Una vez que todo esté correcto nos tendrá que decir que tenemos que reiniciar:</p><br>
+		<img src='./files/accesoactive.png'/><br>
+		<p>Antes de reiniciar editamos el fichero /etc/lightdm/lightdm.conf y ponemos las dos ultimas lineas siguientes para poder iniciar sesión con cualquier otro usuario no registrado en el cliente:</p>
+		<img src='./files/iniciosesion.png'/><br>
+<h1><a id='final'><u>Comprobación</u></a></h1>
+<p>Reiniciamos el sistema y ponemos cualquier usuario del dominio y la contraseña del mismo.Nos tendría que iniciar sesión sin problemas</p>
+<img src='./files/comprobacion.png'/><br>
+</body>
+</html>
